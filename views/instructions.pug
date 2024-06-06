@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  main.container
+    h3= user
+    h1= title
+    ol 
+      li Inicio del juego: El juego comienza con una palabra oculta que el jugador debe adivinar. Esta palabra se muestra como una serie de guiones bajos, uno por cada letra de la palabra.
+      li Intentos del jugador: El jugador tiene un número limitado de intentos para adivinar la palabra oculta.
+      li Adivinando letras: El jugador intenta adivinar la palabra oculta ingresando una letra a la vez. Si la letra que ingresa está en la palabra oculta, se revela en su posición correspondiente dentro de la palabra. Si la letra no está en la palabra oculta, se resta un intento al jugador.
+      li Visualización de letras adivinadas: A medida que el jugador adivina letras correctamente, estas se muestran en la palabra oculta. Esto ayuda al jugador a determinar qué letras aún necesita adivinar.
+      li Fin del juego: El juego termina cuando el jugador adivina todas las letras de la palabra oculta o se quedan sin intentos. Si el jugador adivina la palabra oculta antes de quedarse sin intentos, gana. Si se queda sin intentos antes de adivinar la palabra, pierde.
+    a(href=`/game?name=${user}`) 
+      button.btn-menu Comenzar juego

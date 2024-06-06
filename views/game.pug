@@ -1,0 +1,61 @@
+extends layout
+
+block content
+  main.container
+    h1= title
+    h3= user
+    div.container-info-game
+      div
+        b Tiempo:
+        b.time
+      div 
+        b Puntos:  
+        b.points
+    div.display-game
+      div.container-word 
+        div#word
+      div.container-dummy
+        div ------------------------------
+        div.container-parts |
+        div.container-parts |
+        div.container-parts |
+        div.container-parts |
+        div.container-parts 
+          div.part1 0
+        div.container-parts  
+          div.part3 \
+          div.part2 |
+          div.part4 /
+        div.container-parts 
+          div.part5 /
+          div.part6 \ 
+    div.keyboard-container 
+      button.btn A
+      button.btn B
+      button.btn C
+      button.btn D
+      button.btn E
+      button.btn F
+      button.btn G
+      button.btn H
+      button.btn I
+      button.btn J
+      button.btn K
+      button.btn L
+      button.btn M
+      button.btn N
+      button.btn O
+      button.btn P
+      button.btn Q
+      button.btn R
+      button.btn S
+      button.btn T
+      button.btn U
+      button.btn V
+      button.btn W
+      button.btn X
+      button.btn Y
+      button.btn Z   
+    a(href=`/gameOver?name=${user}`) 
+      button.btn-menu Finalizar juego
+  script(src="/js/game.js", type="module")    

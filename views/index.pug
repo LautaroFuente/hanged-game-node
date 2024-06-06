@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  main.container
+    h1= title
+    h3 Escribe tu nombre 
+    input(type="text" placeholder="Nombre").name 
+    b Pulsa el boton de continuar para ver las instrucciones y jugar! 
+    button.btn-menu Continuar 
+  script(src="/js/index.js", type="module")     

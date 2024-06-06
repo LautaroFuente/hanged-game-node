@@ -1,0 +1,419 @@
+/* Reset */
+
+html {
+  box-sizing: border-box;
+  font-size: 0.8rem;
+  scroll-behavior: smooth;
+  font-family: "Fredericka the Great", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+  color: rgb(255, 255, 255);
+  border: solid 12px #b77a3b;
+  display: flex;
+  height: 100vh;
+}
+
+/* Styles */
+
+b {
+  text-align: center;
+}
+
+.bg-image {
+  background-image: url(/img/bg-photo.jpg);
+  background-blend-mode: overlay;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.btn {
+  width: 40px;
+  height: 40px;
+  margin: 0.2rem;
+  background-color: #b77a3b;
+  font-family: "Fredericka the Great", serif;
+  font-size: 1.5rem;
+  border: solid 3px rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
+}
+
+.btn:disabled {
+  background-color: #525252;
+}
+
+.btn:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.btn:disabled:hover {
+  cursor: default;
+  opacity: 1;
+}
+
+.btn-menu {
+  width: 200px;
+  height: 40px;
+  margin-top: 2rem;
+  background-color: #b77a3b;
+  font-family: "Fredericka the Great", serif;
+  font-size: 1.5rem;
+  border: solid 3px rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
+}
+
+.btn-menu:hover {
+  cursor: pointer;
+  opacity: 0.8;
+  animation: btn-animation 2s ease 0s 1 normal forwards;
+}
+
+.button-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.container-dummy {
+  margin: 4rem 3rem;
+  border: solid 3px rgb(255, 255, 255);
+  width: 10rem;
+  height: 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.container-info-game {
+  display: flex;
+  flex-direction: column;
+  border: solid 2px rgb(255, 255, 255);
+}
+
+.container-info-game b {
+  margin: 2rem;
+}
+
+.container-parts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-word {
+  font-size: 2rem;
+  margin: 2rem 0;
+}
+
+.display-game {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 0 0.5rem;
+}
+
+h4 {
+  width: 100%;
+  text-align: center;
+  border-bottom: 2px solid #b77a3b;
+}
+
+.keyboard-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+li {
+  margin: 1rem;
+  padding: 1rem 0;
+}
+
+.lose-animation {
+  animation: loseAnimation 7s ease 0s 1 normal,
+    stateAnimation 2s ease 0s 1 normal forwards;
+}
+
+.margin {
+  margin: 0.5rem;
+}
+
+.name {
+  margin-bottom: 2rem;
+  border: solid 2px #797474;
+}
+
+ol {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 1rem 3rem;
+  padding: 0;
+}
+
+.part1,
+.part2,
+.part3,
+.part4,
+.part5,
+.part6 {
+  visibility: hidden;
+  font-size: 3rem;
+}
+
+.show {
+  visibility: visible;
+}
+
+.top5 {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  min-height: 500px;
+  padding: 2rem;
+  gap: 1.5rem;
+  border: solid 3px rgb(255, 255, 255);
+}
+
+.total-points {
+  margin: 4rem;
+  font-size: 1.4rem;
+}
+
+.win-animation {
+  animation: winAnimation 7s ease 0s 1 normal,
+    stateAnimation 2s ease 0s 1 normal forwards;
+}
+
+/* Keyframes */
+
+@keyframes btn-animation {
+  0%,
+  100% {
+    transform: rotate(0deg);
+    transform-origin: 50% 50%;
+  }
+
+  10% {
+    transform: rotate(8deg);
+  }
+
+  20%,
+  40%,
+  60% {
+    transform: rotate(-10deg);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: rotate(10deg);
+  }
+
+  80% {
+    transform: rotate(-8deg);
+  }
+
+  90% {
+    transform: rotate(8deg);
+  }
+}
+
+@keyframes stateAnimation {
+  0% {
+    animation-timing-function: ease-in;
+    opacity: 0;
+    transform: translateY(-250px);
+  }
+
+  38% {
+    animation-timing-function: ease-out;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  55% {
+    animation-timing-function: ease-in;
+    transform: translateY(-65px);
+  }
+
+  72% {
+    animation-timing-function: ease-out;
+    transform: translateY(0);
+  }
+
+  81% {
+    animation-timing-function: ease-in;
+    transform: translateY(-28px);
+  }
+
+  90% {
+    animation-timing-function: ease-out;
+    transform: translateY(0);
+  }
+
+  95% {
+    animation-timing-function: ease-in;
+    transform: translateY(-8px);
+  }
+
+  100% {
+    animation-timing-function: ease-out;
+    transform: translateY(0);
+  }
+}
+
+@keyframes loseAnimation {
+  0%,
+  100% {
+    color: rgb(255, 0, 0);
+  }
+
+  10% {
+    color: rgb(121, 18, 18);
+  }
+
+  20%,
+  40%,
+  60% {
+    color: rgb(255, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    color: rgb(121, 18, 18);
+  }
+
+  80% {
+    color: rgb(255, 0, 0);
+  }
+
+  90% {
+    color: rgb(121, 18, 18);
+  }
+}
+
+@keyframes winAnimation {
+  0%,
+  100% {
+    color: rgb(43, 255, 0);
+  }
+
+  10% {
+    color: rgb(44, 129, 27);
+  }
+
+  20%,
+  40%,
+  60% {
+    color: rgb(43, 255, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    color: rgb(44, 129, 27);
+  }
+
+  80% {
+    color: rgb(43, 255, 0);
+  }
+
+  90% {
+    color: rgb(44, 129, 27);
+  }
+}
+
+/* Media */
+
+@media screen and (max-width: 390px) {
+  html {
+    font-size: 0.6rem;
+  }
+
+  .btn {
+    width: 30px;
+    height: 30px;
+    margin: 0.1rem;
+  }
+
+  .btn-menu {
+    width: 160px;
+    height: 30px;
+    margin-top: 1rem;
+  }
+
+  .container-word {
+    font-size: 1.5rem;
+  }
+
+  .top5 {
+    width: 100px;
+    min-height: 300px;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  html {
+    font-size: 1rem;
+  }
+
+  .btn {
+    width: 45px;
+    height: 45px;
+  }
+
+  .btn-menu {
+    width: 300px;
+    height: 60px;
+    margin-top: 2.5rem;
+  }
+
+  .button-container {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .display-game {
+    flex-direction: row;
+    gap: 4rem;
+  }
+
+  .top5 {
+    width: 300px;
+    min-height: 700px;
+  }
+}

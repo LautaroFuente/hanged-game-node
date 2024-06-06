@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  main.container
+    h1= title
+    h3= name
+    b.total-points Puntos: #{points} 
+    h1#stateGame
+    div.button-container
+      a(href="/") 
+        button.btn-menu Volver al inicio
+      a(href="/score")
+        button.btn-menu Score
+  script(src="/js/gameOver.js", type="module")  

@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  main.container
+    h1= title
+    div.top5
+      if score.length > 0
+        each points in score 
+          b= points.name
+          h4= points.total
+      else
+        b No hay puntuaciones
+    div.button-container
+      a(href="/") 
+        button.btn-menu Volver al inicio
