@@ -20,11 +20,11 @@ const connection = mysql.createPool({
   queueLimit: 0,
 });
 
-try {
+/*try {
   await connection.connect();
   console.log("Se establecio conexion");
 } catch (err) {
   console.error("Hubo un error al establecer conexion:", err);
-}
+}*/
 
 export default connection;
