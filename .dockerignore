@@ -1,0 +1,25 @@
+# Dependencias locales
+node_modules/
+
+# Build output
+dist/
+build/
+
+# Archivos del editor
+.vscode/
+.idea/
+
+# Archivos temporales o de sistema
+*.log
+*.env
+*.md
+*.DS_Store
+Thumbs.db
+npm-debug.log
+node_modules
+npm-debug.log
+.env
+.git
+.gitignore
+.vscode
+.DS_Store

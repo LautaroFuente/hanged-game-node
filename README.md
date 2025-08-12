@@ -26,3 +26,33 @@
 ### Or see it in operation here if continue active
 
 - Link: https://hanged-game-node-production.up.railway.app/.
+
+### Test with Docker
+
+You can run the application together with the MySQL database using **Docker Compose**.
+
+Steps:
+
+1. Make sure you have **Docker** and **Docker Compose** installed on your system.
+2. Create a `.env` file in the root of the project (you can base it on `.env.example`):
+
+   ```env
+   PORT=3000
+
+   # MySQL root user password
+   DB_ROOT_PASSWORD=root_password_here
+
+   # MySQL database + user
+   DB_NAME=score_db
+   DB_USER=score_user
+   DB_PASSWORD=score_password_here
+   DB_PORT=3306
+   ```
+
+3. Start the containers: `docker compose up -d`
+4. This will start:
+
+A MySQL container with the database and user configured.
+
+The Node.js application connected to that database. 5. Open the application in your browser at:
+http://localhost:3000 6. To stop the containers: `docker compose down`
